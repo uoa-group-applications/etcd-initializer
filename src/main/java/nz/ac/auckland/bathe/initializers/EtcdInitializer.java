@@ -29,7 +29,7 @@ public class EtcdInitializer implements BatheInitializer {
     @Override
     public String[] initialize(String[] args, String jumpClass) {
         List<URI> uris = new ArrayList<>();
-        for (String uri : System.getProperty("etcd.Uris", "http://localhost:4001").split(";")) {
+        for (String uri : System.getProperty("etcd.Uris", "http://localhost:4001").split(",")) {
             uris.add(URI.create(uri));
         }
 
